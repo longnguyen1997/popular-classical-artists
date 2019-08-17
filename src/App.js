@@ -5,7 +5,7 @@ import { Box, Button, Heading, Grommet, Text } from "grommet";
 import { Collapsible } from "grommet";
 // Responsive design.
 import { ResponsiveContext, Layer } from "grommet";
-import { Music, FormClose } from "grommet-icons";
+import { Menu, FormClose } from "grommet-icons";
 import ArtistBios from "./Content";
 import './App.css';
 
@@ -99,7 +99,7 @@ class App extends Component {
                 </Heading>
                 {/* Buttons can have icons! */}
                 <Button
-                  icon={<Music />}
+                  icon={<Menu />}
                   onClick={() => {
                     this.setState(s => ({ sidebar: !s.sidebar }));
                   }}
