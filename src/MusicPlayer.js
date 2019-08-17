@@ -39,7 +39,7 @@ export default class MusicPlayer extends React.Component {
 
 	render() {
 		const margins = {
-			top: "15px",
+			top: "50px",
 			bottom: "50px"
 		};
 		return (
