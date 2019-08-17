@@ -1,0 +1,41 @@
+* {
+	font-family: 'HelveticaNeue', 'Roboto', 'Arial' !important;
+}
+
+/* MUSIC PIECE DESCRIPTIONS */
+
+.tippy-tooltip.spotify-theme {
+  background-color: #1f1f1f;
+  color: #b0b0b0;
+  filter: drop-shadow(1px 1px 1px black);
+}
+
+.tippy-tooltip.spotify-theme[data-animatefill] {
+  background-color: transparent;
+}
+
+.tippy-tooltip.spotify-theme .tippy-backdrop {
+  background-color: #1f1f1f;
+  color: #b0b0b0;
+  filter: drop-shadow(1px 1px 1px black);
+}
+
+/* TRANSITIONS FOR ARTIST SNIPPETS */
+
+.composer-enter {
+  opacity: 0.01;
+}
+
+.composer-enter.composer-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.composer-leave {
+  opacity: 1;
+}
+
+.composer-leave.composer-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
