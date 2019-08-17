@@ -66,29 +66,6 @@ const artistData = {
 	}
 };
 
-const artists = {};
-
-["chopin", "mozart", "bach", "beethoven"].forEach(composer => {
-	artists[composer] = (
-		<React.Fragment>
-			<Box height="medium" width="medium">
-				<Heading level={1} textAlign="center">
-					{composer.charAt(0).toUpperCase() + composer.slice(1)}
-				</Heading>
-				<Image fit="cover" src={artistData[composer]["image"]} />
-			</Box>
-			<Box margin="small">
-				<b>
-					{(new Date() - new Date(artistData[composer]["bday"])) /
-						31536000000}{" "}
-					years old
-				</b>
-			</Box>
-			<Box margin="small">{artistData[composer]["bio"]}</Box>
-		</React.Fragment>
-	);
-});
-
 class ArtistBios extends React.Component {
 	constructor(props) {
 		/* Should ever only contain size for
@@ -96,10 +73,32 @@ class ArtistBios extends React.Component {
 		currently selected (passed as state from
 		the main application logic). */
 		super(props);
-	}
-
-	selectArtist() {
-		return artists[this.props.artist];
+		this.artists = {};
+		["chopin", "mozart", "bach", "beethoven"].forEach(composer => {
+			this.artists[composer] = (
+				<React.Fragment>
+					<Box height="medium" width="medium">
+						<Heading level={1} textAlign="center">
+							{composer.charAt(0).toUpperCase() +
+								composer.slice(1)}
+						</Heading>
+						<Image
+							fit="cover"
+							src={artistData[composer]["image"]}
+						/>
+					</Box>
+					<Box margin="small">
+						<b>
+							{(new Date() -
+								new Date(artistData[composer]["bday"])) /
+								31536000000}{" "}
+							years old
+						</b>
+					</Box>
+					<Box margin="small">{artistData[composer]["bio"]}</Box>
+				</React.Fragment>
+			);
+		});
 	}
 
 	render() {
@@ -113,7 +112,7 @@ class ArtistBios extends React.Component {
 				pad="medium"
 			>
 				{/* Display an artist based on the user's selection */}
-				{this.selectArtist()}
+				{this.artists[this.props.artist]}
 				<MusicPlayer artist={this.props.artist} />
 			</Box>
 		);
