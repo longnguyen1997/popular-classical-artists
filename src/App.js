@@ -22,7 +22,6 @@ const grommetTheme = {
       sidebar: greenShades.dark
     },
     font: {
-      family: "HelveticaNeue",
       size: "17px"
     }
   },
@@ -42,7 +41,6 @@ const AppBar = function(props) {
       pad={{ left: "medium", right: "small", vertical: "small" }}
       elevation="medium"
       style={{ zIndex: "1" }}
-      animation="slideDown"
       {...props}
     />
   );

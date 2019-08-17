@@ -15,7 +15,8 @@ const artistData = {
 				technique that was without equal in his generation."
 			</Paragraph>
 		),
-		image: "https://live.staticflickr.com/2541/4225372582_483fcd0ea4_b.jpg"
+		image: "https://medicitv-a.imgix.net/movie/the-art-of-chopin_d.jpg",
+		bday: "1 Mar 1810"
 	},
 	mozart: {
 		bio: (
@@ -31,7 +32,8 @@ const artistData = {
 			</Paragraph>
 		),
 		image:
-			"https://mediad.publicbroadcasting.net/p/kmuw/files/styles/x_large/public/201503/Mozart-small.jpg"
+			"https://media.wnyc.org/i/800/0/c/85/1/wolfgang_amadeus_mozart.gif",
+		bday: "27 Jan 1756"
 	},
 	bach: {
 		bio: (
@@ -47,7 +49,8 @@ const artistData = {
 			</Paragraph>
 		),
 		image:
-			"https://upload.wikimedia.org/wikipedia/commons/6/6a/Johann_Sebastian_Bach.jpg"
+			"http://cdn.classical-music.com/sites/default/files/imagecache/623px_wide/bach_625.jpg",
+		bday: "31 Mar 1685"
 	},
 	beethoven: {
 		bio: (
@@ -62,7 +65,8 @@ const artistData = {
 			</Paragraph>
 		),
 		image:
-			"https://upload.wikimedia.org/wikipedia/commons/6/6f/Beethoven.jpg"
+			"https://d15v4l58k2n80w.cloudfront.net/file/1396975600/30269233945/width=1280/height=720/format=-1/fit=crop/crop=40x0+1421x800/rev=2/t=418622/e=never/k=cf46d046/BeethovensNinth.jpg",
+		bday: "17 Dec 1770"
 	}
 };
 
@@ -71,12 +75,13 @@ const artists = {};
 ["chopin", "mozart", "bach", "beethoven"].forEach(composer => {
 	artists[composer] = (
 		<React.Fragment>
-			<Box height="medium" width="small">
-				<Heading level={2} textAlign="center">
+			<Box height="medium" width="medium">
+				<Heading level={1} textAlign="center">
 					{composer.charAt(0).toUpperCase() + composer.slice(1)}
 				</Heading>
 				<Image fit="cover" src={artistData[composer]["image"]} />
 			</Box>
+			<Box margin="small"><b>{(new Date() - new Date(artistData[composer]['bday']))/31536000000} years old</b></Box>
 			<Box margin="small">{artistData[composer]["bio"]}</Box>
 		</React.Fragment>
 	);
