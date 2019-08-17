@@ -102,7 +102,6 @@ class ArtistBios extends React.Component {
 
 	render() {
 		return (
-			<React.Fragment>
 				<Box
 					direction="column"
 					background="linear-gradient(6deg, rgba(20,20,20,1) 0%, rgba(80,80,80,1) 100%)"
@@ -115,7 +114,6 @@ class ArtistBios extends React.Component {
 					{this.selectArtist()}
 					<MusicPlayer artist={this.props.artist} />
 				</Box>
-			</React.Fragment>
 		);
 	}
 }
